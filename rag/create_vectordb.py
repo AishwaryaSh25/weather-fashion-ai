@@ -6,7 +6,7 @@ from langchain_community.vectorstores import Chroma
 
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-df = pd.read_csv("../women_fashion.csv")
+df = pd.read_csv("women_fashion.csv")
 
 docs = []
 
