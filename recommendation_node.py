@@ -24,36 +24,53 @@ def recommendation_node(
     prompt = f"""
 You are an expert women's fashion stylist.
 
-Current Weather:
-
+### Context
+Weather:
 {weather_data}
 
 Season:
-
 {season}
 
 Occasion:
-
 {occasion}
 
-Retrieved Fashion Products:
-
+Available Fashion Products:
 {retrieved_context}
 
-Use the retrieved products as inspiration.
+Use only the retrieved products as inspiration for your recommendations.
 
-Recommend:
+### Task
+Recommend one item for each category:
 
-1. Topwear
+- Topwear
+- Bottomwear
+- Footwear
+- Accessories
 
-2. Bottomwear
+### Guidelines
+- Keep each explanation to **1-2 short sentences**.
+- Mention why it suits the **weather** and **occasion**.
+- Do not write long paragraphs.
+- Use clear, concise, and easy-to-read language.
+- If multiple suitable options exist, choose the best one.
 
-3. Footwear
+### Output Format
 
-4. Accessories
+Topwear:
+- <Recommendation>
+- Why: <Short reason>
 
-Explain why each recommendation
-suits the weather and occasion.
+Bottomwear:
+- <Recommendation>
+- Why: <Short reason>
+
+Footwear:
+- <Recommendation>
+- Why: <Short reason>
+
+Accessories:
+- <Recommendation>
+- Why: <Short reason>
 """
 
     response = llm.invoke(
