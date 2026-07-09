@@ -38,13 +38,23 @@ def retrieve_fashion(
     )
 
     query = f"""
+    Women's fashion.
+    
     Season: {season}
     Occasion: {mapped_occasion}
+    
+    Find suitable:
+    - Topwear
+    - Bottomwear
+    - Footwear
+    - Accessories
+    
+    Return products appropriate for this season and occasion.
     """
 
     docs = db.similarity_search(
         query,
-        k=5
+        k=20
     )
 
     return docs

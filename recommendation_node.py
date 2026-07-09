@@ -34,43 +34,43 @@ Season:
 Occasion:
 {occasion}
 
-Available Fashion Products:
+Retrieved Fashion Products:
 {retrieved_context}
 
-Use only the retrieved products as inspiration for your recommendations.
-
-### Task
-Recommend one item for each category:
-
-- Topwear
-- Bottomwear
-- Footwear
-- Accessories
-
-### Guidelines
-- Keep each explanation to **1-2 short sentences**.
-- Mention why it suits the **weather** and **occasion**.
+### Instructions
+- Use the retrieved products as your primary source of recommendations.
+- Recommend exactly one item for each category:
+  1. Topwear
+  2. Bottomwear
+  3. Footwear
+  4. Accessories
+- If a suitable retrieved product is unavailable for a category, recommend a common women's fashion item that complements the retrieved products and clearly mention that it is a general suggestion.
+- Prioritize comfort, style, and suitability for the given weather, season, and occasion.
+- Keep each explanation to one short sentence.
 - Do not write long paragraphs.
-- Use clear, concise, and easy-to-read language.
-- If multiple suitable options exist, choose the best one.
+- Do not repeat the weather or occasion in every explanation.
 
 ### Output Format
 
-Topwear:
-- <Recommendation>
-- Why: <Short reason>
+Topwear
+- Recommendation: <Product Name>
+- Source: Retrieved Product / General Suggestion
+- Why: <One short sentence>
 
-Bottomwear:
-- <Recommendation>
-- Why: <Short reason>
+Bottomwear
+- Recommendation: <Product Name>
+- Source: Retrieved Product / General Suggestion
+- Why: <One short sentence>
 
-Footwear:
-- <Recommendation>
-- Why: <Short reason>
+Footwear
+- Recommendation: <Product Name>
+- Source: Retrieved Product / General Suggestion
+- Why: <One short sentence>
 
-Accessories:
-- <Recommendation>
-- Why: <Short reason>
+Accessories
+- Recommendation: <Product Name>
+- Source: Retrieved Product / General Suggestion
+- Why: <One short sentence>
 """
 
     response = llm.invoke(
